@@ -15,6 +15,7 @@ Useful utils for grammY.
 ## Utils
 
 - [Allowed updates](#allowed-updates) - helps to create a list of update types the bot will receive.
+- [Test server URL builder](#test-server-url-builder) - helps to use Telegram test server for API calls.
 
 ### Allowed updates
 
@@ -70,3 +71,20 @@ bot.start({
 | chatMember      | chat_member                                       |
 | chatJoinRequest | chat_join_request                                 |
 | all             | Contains all types of updates specified above     |
+
+### Test server URL builder
+
+Helps to use Telegram test server for API calls.
+
+#### Usage
+
+```ts
+import { buildTestServerUrl } from "@grammyjs/util";
+
+// Pass the function to the bot URL builder:
+const bot = new Bot("<token>", {
+  client: {
+    buildUrl: buildTestServerUrl,
+  },
+});
+```
