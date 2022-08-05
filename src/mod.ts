@@ -1,3 +1,1 @@
-/**
- * MAIN PLUGIN CODE HERE
- */
+export * as AllowedUpdates from "./allowed-updates.ts";

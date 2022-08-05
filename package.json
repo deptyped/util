@@ -26,6 +26,7 @@
     "grammy": "^1.0.0"
   },
   "devDependencies": {
+    "@grammyjs/types": "^2.8.2",
     "deno2node": "1.4.0"
   },
   "keywords": [
