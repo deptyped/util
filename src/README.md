@@ -26,34 +26,35 @@ Helps to create a list of update types the bot will receive.
 ```ts
 import { AllowedUpdates } from "@grammyjs/util";
 
+// Manual creation of update type list:
+bot.start({
+  allowed_updates: AllowedUpdates.from(
+    AllowedUpdates.message |
+      AllowedUpdates.editedMessage |
+      AllowedUpdates.callbackQuery,
+  ),
+});
+
 // Use predefined update lists:
 bot.start({
-  allowed_updates: AllowedUpdates.messages,
+  allowed_updates: AllowedUpdates.from(AllowedUpdates.all),
 });
 
 // Merge predefined update lists:
 bot.start({
   allowed_updates: AllowedUpdates.from(
-    AllowedUpdates.messages,
-    AllowedUpdates.channelPosts,
-    AllowedUpdates.inline,
+    AllowedUpdates.messages |
+      AllowedUpdates.channelPosts |
+      AllowedUpdates.inline,
   ),
 });
 
 // Manual addition of update type:
 bot.start({
   allowed_updates: AllowedUpdates.from(
-    AllowedUpdates.messages,
-    AllowedUpdates.channelPosts,
-    AllowedUpdates.raw.inlineQuery,
-  ),
-});
-
-// Manual creation of update type list:
-bot.start({
-  allowed_updates: AllowedUpdates.from(
-    AllowedUpdates.raw.channelPost,
-    AllowedUpdates.raw.inlineQuery,
+    AllowedUpdates.messages |
+      AllowedUpdates.channelPosts |
+      AllowedUpdates.inlineQuery,
   ),
 });
 ```
