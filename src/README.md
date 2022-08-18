@@ -15,6 +15,7 @@ Useful utils for grammY.
 ## Utils
 
 - [Allowed updates](#allowed-updates) - helps to create a list of update types the bot will receive.
+- [Automatic sending of chat actions](#automatic-sending-of-chat-actions) - helps to automatically send the appropriate [chat actions](https://core.telegram.org/bots/api#sendchataction).
 - [Test server URL builder](#test-server-url-builder) - helps to use Telegram test server for API calls.
 
 ### Allowed updates
@@ -72,6 +73,19 @@ bot.start({
 | chatMember      | chat_member                                       |
 | chatJoinRequest | chat_join_request                                 |
 | all             | Contains all types of updates specified above     |
+
+### Automatic sending of chat actions
+
+Helps to automatically send the appropriate [chat actions](https://core.telegram.org/bots/api#sendchataction).
+
+#### Usage
+
+```ts
+import { autoChatAction } from "@grammyjs/util";
+
+// Install the plugin
+bot.api.config.use(autoChatAction());
+```
 
 ### Test server URL builder
 
